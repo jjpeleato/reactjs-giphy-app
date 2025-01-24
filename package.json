@@ -8,23 +8,26 @@
     "giphy"
   ],
   "repository": {
-		"type": "git",
-		"url": "git+https://github.com/jjpeleato/reactjs-giphy-app.git"
-	},
+    "type": "git",
+    "url": "git+https://github.com/jjpeleato/reactjs-giphy-app.git"
+  },
   "author": "@jjpeleato",
   "license": "GPL-2.0",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
+    "build:alpha": "dotenv -e .env.alpha.local vite",
+    "build:beta": "dotenv -e .env.beta.local vite",
+    "commit": "cz",
+    "dev": "vite",
     "lint": "eslint .",
-    "preview": "vite preview",
     "prepare": "husky install",
-    "commit": "cz"
+    "preview": "vite preview"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -37,6 +40,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
+    "dotenv-cli": "^8.0.0",
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
@@ -45,9 +49,9 @@
     "husky": "^9.1.7",
     "vite": "^6.0.5"
   },
-	"config": {
-		"commitizen": {
-			"path": "./node_modules/cz-conventional-changelog"
-		}
-	}
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
