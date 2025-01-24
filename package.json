@@ -1,28 +1,57 @@
 {
-  "name": "reatjs-giphy-app",
+  "name": "reactjs-giphy-app",
+  "description": "An example created in React.js with connection to Giphy.",
+  "keywords": [
+    "javascript",
+    "react",
+    "reactjs",
+    "giphy"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjpeleato/reactjs-giphy-app.git"
+  },
+  "author": "@jjpeleato",
+  "license": "GPL-2.0",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
+    "build:alpha": "dotenv -e .env.alpha.local vite",
+    "build:beta": "dotenv -e .env.beta.local vite",
+    "commit": "cz",
+    "dev": "vite",
     "lint": "eslint .",
+    "prepare": "husky install",
     "preview": "vite preview"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.17.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "dotenv-cli": "^8.0.0",
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "husky": "^9.1.7",
     "vite": "^6.0.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
