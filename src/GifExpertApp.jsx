@@ -1,12 +1,26 @@
+import { useState } from 'react';
+import { AddCategory, GifGrid } from './components';
+
 export const GifExpertApp = () => {
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const apiUrl = import.meta.env.VITE_API_URL;
+  const [categories, setCategories] = useState([]);
+
+  const onAddCategory = (item) => {
+    if (categories.includes(item)) {
+      return;
+    }
+
+    setCategories([item, ...categories]);
+  }
 
   return (
     <>
-      <h1>GifExpertApp</h1>
-      <p>{apiKey}</p>
-      <p>{apiUrl}</p>
+        <h1>GifExpertApp</h1>
+        <AddCategory onAddCategory={onAddCategory} />
+        {
+          categories.map(category => (
+            <GifGrid key={btoa(category)} category={category} />
+          ))
+        }
     </>
-  );
-};
+  )
+}
