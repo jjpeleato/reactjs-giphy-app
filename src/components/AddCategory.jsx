@@ -1,40 +1,40 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import PropTypes from "prop-types";
 
 export const AddCategory = ({ onAddCategory }) => {
-    const [inputValue, setInputValue] = useState('');
-    
-    const onInputChange = (event) => {
-        const { target } = event;
-        const { value } = target;
+  const [inputValue, setInputValue] = useState("");
 
-        setInputValue(value);
-    };
+  const onInputChange = (event) => {
+    const { target } = event;
+    const { value } = target;
 
-    const onSubmit = (event) => {
-        event.preventDefault();
-        const value = inputValue.trim();
+    setInputValue(value);
+  };
 
-        if (value.length <= 1) {
-            return;
-        }
+  const onSubmit = (event) => {
+    event.preventDefault();
+    const value = inputValue.trim();
 
-        onAddCategory(value);
-        setInputValue('');
+    if (value.length <= 1) {
+      return;
     }
 
-    return (
-        <form onSubmit={onSubmit} aria-label='form'>
-            <input
-                type="text"
-                placeholder="Search gifs..."
-                value={inputValue}
-                onChange={onInputChange}
-            />
-        </form>
-    );
-}
+    onAddCategory(value);
+    setInputValue("");
+  };
+
+  return (
+    <form onSubmit={onSubmit} aria-label="form">
+      <input
+        type="text"
+        placeholder="Search gifs..."
+        value={inputValue}
+        onChange={onInputChange}
+      />
+    </form>
+  );
+};
 
 AddCategory.propTypes = {
-    onAddCategory: PropTypes.func.isRequired,
-}
+  onAddCategory: PropTypes.func.isRequired,
+};

@@ -1,6 +1,6 @@
+import { uri, key } from "../constants";
+
 export const getGifs = async (category) => {
-  const uri = import.meta.env.VITE_API_URL;
-  const key = import.meta.env.VITE_API_KEY;
   const limit = 10;
   const url = `${uri}?api_key=${key}&q=${category}&limit=${limit}`;
 
